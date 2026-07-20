@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: country_details_transform
+    description: "dbt models to create the country_details_transform table"
+    columns:
+      - name: "(country_common_name||country_continent_name||country_currency_name)"
+        description: "The primary key combination for this table"
+        tests:
+          - unique
+          - not_null
+          
